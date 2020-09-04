@@ -14,4 +14,28 @@
             $('#' + this.id + 'Img').removeClass().addClass('animated bounceInDown') :
             $('#' + this.id + 'Img').addClass('animated bounceOutUp');
     });
+
+    function addAnimation() {
+        function generateNum() {
+            let random = Math.floor((Math.random() * 6));
+            if (random === 6) {
+                random--;
+            }
+            return random;
+        }
+        let randomNumber = generateNum();
+        console.log('random number: ' + randomNumber);
+
+        let animateArray = ['animated bounce',
+            'animated flash',
+            'animated pulse',
+            'animated rubberBand',
+            'animated tada',
+            'animated wobble']; 
+
+        let animateClass = animateArray[randomNumber];
+        $("#animate").addClass(animateClass);
+    }
+    addAnimation();
 });
+
