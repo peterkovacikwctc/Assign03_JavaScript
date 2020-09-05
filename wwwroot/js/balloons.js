@@ -24,8 +24,7 @@
             return random;
         }
         let randomNumber = generateNum();
-        console.log('random number: ' + randomNumber);
-
+        
         let animateArray = ['animated bounce',
             'animated flash',
             'animated pulse',
@@ -37,5 +36,24 @@
         $("#animate").addClass(animateClass);
     }
     addAnimation();
+
+    $(function () {
+        $('.checkToToast').on('click', function (e) {
+            e.preventDefault();
+
+            let redChecked = $('#red').prop('checked');
+            console.log('red checked: ' + redChecked);
+
+            let greenChecked = $('#green').prop('checked');
+            console.log('green checked: ' + greenChecked);
+
+            let blueChecked = $('#blue').prop('checked');
+            console.log('blue checked: ' + blueChecked);
+
+            if (redChecked === false && greenChecked === false && blueChecked === false) {
+                $('#toast').toast({ autohide: false }).toast('show');
+            }
+        });
+    });
 });
 

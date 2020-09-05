@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width">
     <meta charset="utf-8" />
     <title>Balloons</title>
+    <link href="css/balloons.css" rel="stylesheet" />
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <!-- pickadate -->
@@ -24,9 +25,11 @@
         body {
             font-family: 'Questrial';
         }
+
         h1.animated {
             display: inline-block;
         }
+
         .ball {
             visibility: hidden;
         }
@@ -65,8 +68,8 @@
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-outline-primary mt-3" id="submit">Submit</button>
-                </div>
+                    <a href="#" class="checkToToast"><button type="button" class="btn btn-outline-primary mt-3" id="submit">Submit</button>
+                </div></a>
                 <div class="col-sm">
                     <img src="media/red.png" class="ball" alt="red balloon" id="redImg" />
                     <img src="media/green.png" class="ball" alt="green balloon" id="greenImg" />
@@ -74,6 +77,19 @@
                 </div>
             </div>
         </form>
+    </div>
+
+    <!-- toast -->
+    <div id="toast" class="toast">
+        <div class="toast-header">
+            <strong class="mr-auto" id="product">Favorite Balloons</strong>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="toast-body">
+            choice: <strong id="code">no balloons selected</strong>
+        </div>
     </div>
 
     <!-- jQuery -->
