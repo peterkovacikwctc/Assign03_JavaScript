@@ -37,6 +37,7 @@
     }
     addAnimation();
 
+    // show toast with submit button if no balloons are checked
     $(function () {
         $('.checkToToast').on('click', function (e) {
             e.preventDefault();
@@ -52,6 +53,38 @@
 
             if (redChecked === false && greenChecked === false && blueChecked === false) {
                 $('#toast').toast({ autohide: false }).toast('show');
+            }
+        });
+    });
+
+    // button to check/uncheck all balloons
+    $(function () {
+        $('.checkAll').on('click', function (e) {
+            e.preventDefault();
+
+            let redChecked = $('#red').prop('checked');
+            let greenChecked = $('#green').prop('checked');
+            let blueChecked = $('#blue').prop('checked');
+
+            // if all are unchecked, check all
+            if (redChecked === false && greenChecked === false && blueChecked === false) {
+                $("#red").click();
+                $("#green").click();
+                $("#blue").click();
+            }
+
+            // if all are checked, uncheck all
+            else if (redChecked === true && greenChecked === true && blueChecked === true) {
+                $("#red").click();
+                $("#green").click();
+                $("#blue").click();
+            }
+
+            // if some are checked, check all
+            else {
+                if (redChecked === false) $("#red").click();
+                if (greenChecked === false) $("#green").click();
+                if (blueChecked === false) $("#blue").click();
             }
         });
     });
