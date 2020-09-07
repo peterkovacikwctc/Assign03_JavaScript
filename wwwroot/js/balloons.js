@@ -88,5 +88,27 @@
             }
         });
     });
+
+    // change color of h1 element (Happy Birthday) while hovering over checkbox label
+    // change to red
+    $("label[for=red]").hover(function () {
+        $("#animate").css("color", "red");
+    }, function () {
+        $("#animate").css("color", "initial"); 
+    });
+
+    // change to green
+    $("label[for=green]").hover(function () {
+        $("#animate").css("color", "green");
+    }, function () {
+        $("#animate").css("color", "initial"); 
+    });
+
+    // change to blue
+    $("label[for=blue]").hover(function () {
+        $("#animate").css("color", "blue");
+    }, function () {
+        $("#animate").css("color", "initial"); 
+    });
 });
 
